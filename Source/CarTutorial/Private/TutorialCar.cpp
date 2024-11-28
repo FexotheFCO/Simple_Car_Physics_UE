@@ -1,5 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Copyright (c) 2024 https://github.com/FexotheFCO/Simple_Car_Physics_UE under MIT License. 
+// 
+// Made by Agustin "Troskia" Torchia
 
 #include "TutorialCar.h"
 
@@ -119,7 +120,6 @@ void ATutorialCar::AccelerationTick()
 		if (!wheel.IsGrounded || !wheel.IsEngine)
 			continue;
 
-		//Get the lateral direction of the Wheel
 		FVector accelerationForce = CarBox->GetComponentTransform().TransformVector(wheel.CurrentDirection * ForwardForce * AccelerationInput);
 		FVector projectedVector = FVector::VectorPlaneProject(accelerationForce, wheel.GroundNormal);
 

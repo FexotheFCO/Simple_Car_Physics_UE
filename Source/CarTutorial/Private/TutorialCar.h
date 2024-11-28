@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2024 https://github.com/FexotheFCO/Simple_Car_Physics_UE under MIT License. 
+// 
+// Made by Agustin "Troskia" Torchia
 
 #pragma once
 
@@ -84,25 +86,25 @@ public:
 	TArray<FCarWheel> Springs;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
-	float SuspensionStrength = 2000;
+	float SuspensionStrength = 360000;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
 	float SuspensionLenght = 50;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
-	float SuspensionDamping = 1.5;
+	float SuspensionDamping = 1000;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
-	float ForwardForce = 500;
+	float ForwardForce = 50000;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
-	float SteeringForce = 1500000;
+	float SteeringForce = 100;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
 	float MaxAngle = 45;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
-	float CoMVerticalOffset = -10;
+	float CoMVerticalOffset = -20;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	float SteeringInput = 0;
