@@ -20,15 +20,12 @@ struct FCarWheel
 	FCarWheel()
 	{};
 
-	FCarWheel(FVector position, bool isGrounded, bool isSteering, bool isEngine, float grip)
-		: LocalPosition(position), IsGrounded(isGrounded), IsSteering(isSteering), IsEngine(isEngine), Grip(grip)
+	FCarWheel(FVector position, bool isSteering, bool isEngine, float grip)
+		: LocalPosition(position), IsSteering(isSteering), IsEngine(isEngine), Grip(grip)
 	{};
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector LocalPosition;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool IsGrounded;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool IsSteering;
@@ -40,19 +37,22 @@ struct FCarWheel
 	float Grip;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector GroundNormal;
+	bool IsGrounded { false };
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector CurrentDirection;
+	FVector GroundNormal { FVector::ZeroVector };
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector CurrentWorldPosition;
+	FVector CurrentDirection { FVector::ZeroVector };
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector ApplyForcesLocalPosition;
+	FVector CurrentWorldPosition { FVector::ZeroVector };
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector ApplyForcesWorldPosition;
+	FVector ApplyForcesLocalPosition { FVector::ZeroVector };
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FVector ApplyForcesWorldPosition { FVector::ZeroVector };
 };
 
 UENUM(BlueprintType)

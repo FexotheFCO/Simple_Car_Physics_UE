@@ -39,10 +39,10 @@ void ATutorialCar::BeginPlay()
 	
 	FVector boxExtent = CarBox->GetUnscaledBoxExtent();
 
-	Springs.EmplaceAt(WheelsPositionsEnum::FL, FCarWheel(FVector(boxExtent.X, -boxExtent.Y, -boxExtent.Z),false, true, true, 1));
-	Springs.EmplaceAt(WheelsPositionsEnum::FR, FCarWheel(FVector(boxExtent.X, boxExtent.Y, -boxExtent.Z), false, true, true, 1));
-	Springs.EmplaceAt(WheelsPositionsEnum::RL, FCarWheel(FVector(-boxExtent.X, -boxExtent.Y, -boxExtent.Z), false, false, true, 0.8));
-	Springs.EmplaceAt(WheelsPositionsEnum::RR, FCarWheel(FVector(-boxExtent.X, boxExtent.Y, -boxExtent.Z), false, false, true, 0.8));
+	Springs.EmplaceAt(WheelsPositionsEnum::FL, FCarWheel(FVector(boxExtent.X, -boxExtent.Y, -boxExtent.Z), true, true, 1));
+	Springs.EmplaceAt(WheelsPositionsEnum::FR, FCarWheel(FVector(boxExtent.X, boxExtent.Y, -boxExtent.Z), true, true, 1));
+	Springs.EmplaceAt(WheelsPositionsEnum::RL, FCarWheel(FVector(-boxExtent.X, -boxExtent.Y, -boxExtent.Z), false, true, 0.8));
+	Springs.EmplaceAt(WheelsPositionsEnum::RR, FCarWheel(FVector(-boxExtent.X, boxExtent.Y, -boxExtent.Z), false, true, 0.8));
 
 	FVector localCenterOfMass = CarBox->GetComponentTransform().InverseTransformPosition(CarBox->GetCenterOfMass());
 
