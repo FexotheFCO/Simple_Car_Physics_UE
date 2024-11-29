@@ -68,7 +68,7 @@ void ATutorialCar::SuspensionTick()
 	{
 		wheel.CurrentWorldPosition = CarBox->GetComponentTransform().TransformPosition(wheel.LocalPosition);
 		wheel.ApplyForcesWorldPosition = CarBox->GetComponentTransform().TransformPosition(wheel.ApplyForcesLocalPosition);
-		FVector endPoint = CarBox->GetComponentTransform().TransformVector(FVector::DownVector * SuspensionLenght) + wheel.CurrentWorldPosition;
+		FVector endPoint = CarBox->GetComponentTransform().TransformVector(FVector::DownVector * SuspensionLength) + wheel.CurrentWorldPosition;
 		FHitResult hitResult;
 		TArray<AActor*> ignoredActors;
 		ignoredActors.Add(this);
@@ -76,7 +76,7 @@ void ATutorialCar::SuspensionTick()
 		wheel.IsGrounded = UKismetSystemLibrary::LineTraceSingleByProfile(GetWorld(), wheel.CurrentWorldPosition, endPoint, "Vehicle", false, ignoredActors, EDrawDebugTrace::ForOneFrame, hitResult,true);
 		if (wheel.IsGrounded)
 		{
-			float compressRatio = (SuspensionLenght - hitResult.Distance) / SuspensionLenght;
+			float compressRatio = (SuspensionLength - hitResult.Distance) / SuspensionLength;
 			float totalForce = (compressRatio * SuspensionStrength) - (SuspensionDamping * CarBox->GetPhysicsLinearVelocityAtPoint(wheel.CurrentWorldPosition).Z);
 
 			wheel.GroundNormal = hitResult.Normal;

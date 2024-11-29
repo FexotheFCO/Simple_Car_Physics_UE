@@ -89,7 +89,7 @@ public:
 	float SuspensionStrength = 360000;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
-	float SuspensionLenght = 50;
+	float SuspensionLength = 50;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Car Configuration")
 	float SuspensionDamping = 1000;
